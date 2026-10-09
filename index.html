@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stand Firm & Act Like Men</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#101112;color:#f4f0e7;font-family:Arial,Helvetica,sans-serif}body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 80% 15%,#303132,#101112 55%);opacity:.95}
+header{position:sticky;top:0;z-index:10;background:#101112f2;border-bottom:1px solid #343434;padding:12px 20px}header strong{font-size:18px;letter-spacing:.09em}nav{display:flex;gap:8px;overflow:auto;padding-top:12px}nav a{color:#e6dfd4;text-decoration:none;font-weight:800;white-space:nowrap;border:1px solid #444;border-radius:25px;padding:9px 13px;font-size:13px}nav a:hover{border-color:#9e2a2a}
+.cover,.panel{min-height:90vh;padding:9vh 8vw;display:flex;flex-direction:column;justify-content:center;border-bottom:1px solid #333}.cover{min-height:80vh;background:linear-gradient(115deg,#080909,#27292c)}.kicker{font-size:clamp(15px,1.4vw,20px);font-weight:900;color:#bd4747;letter-spacing:.16em;margin-bottom:22px}h1,h2{font-size:clamp(52px,8vw,112px);line-height:.91;letter-spacing:-.05em;margin:0;max-width:1200px;font-weight:900}h2{font-size:clamp(42px,6.6vw,92px)}p{font-size:clamp(22px,2.7vw,36px);line-height:1.24;max-width:1050px;color:#e1ddd6}.ask{border-top:2px solid #922929;padding-top:20px;margin-top:36px;font-size:clamp(25px,3vw,42px);font-weight:800;max-width:1050px}.ask small{display:block;color:#bd4747;font-size:14px;letter-spacing:.15em;margin-bottom:12px}.watch{display:inline-block;padding:16px 24px;background:#842323;color:#fff;text-decoration:none;font-weight:900;font-size:20px;width:max-content;max-width:100%}.week-title{background:linear-gradient(110deg,#0b0c0d,#272a2b)}.end{text-align:center;padding:55px 20px;color:#aaa;font-weight:900;letter-spacing:.1em}.note{font-size:17px;color:#aaa}.muted{color:#bd4747}
+@media(max-width:650px){header{padding:10px}.cover,.panel{padding:9vh 7vw;min-height:82vh}header strong{font-size:14px}nav a{padding:9px 11px}}
+</style></head><body>
+<header><strong>STAND FIRM &amp; ACT LIKE MEN</strong><nav id="nav"></nav></header>
+<section class="cover"><div class="kicker">A REPEATABLE 7-WEEK MEN'S DISCIPLESHIP PROGRAM</div><h1>STAND <span class="muted">FIRM</span></h1><p>Be watchful. Stand firm in the faith. Act like men. Be strong. Let all that you do be done in love.</p><p class="note">1 Corinthians 16:13–14</p></section>
+<main id="lessons"></main><footer class="end">WE WANT ALL MEN TO SEE AND HEAR THE TRUTH.</footer>
+<script>
+const weeks=[
+["WHERE HAVE ALL THE GOOD MEN GONE?","Reject passivity. Accept responsibility. Surrender to Jesus.",[
+["PAGE 6","GOD GAVE MEN RESPONSIBILITY","Prophet. Priest. Servant King. Provider. Protector.","Which responsibility are you most tempted to avoid?"],
+["PAGES 8–9","A BIRTHDAY DOESN'T MAKE A BOY A MAN","Culture has no consistent rite of passage. Consumption is not manhood.","Who taught you what it meant to be a man?"],
+["PAGE 11","WHO GETS TO DEFINE A MAN?","Not the movie. Not the influencer. Not the culture. GOD'S WORD.","Does he imitate Christ or not?"],
+["GENESIS 3:6","ADAM WAS THERE","He was present — and passive.","Where are you physically present but functionally passive?"],
+["WATCH • 1:16","BEND THE KNEE BEFORE YOU STAND","Joby Martin • 48:34–49:50","", "https://www.youtube.com/watch?v=6u2r8-VBHvg&t=2914s"],
+["PAGES 13–14","YOUR STRENGTH IS NOT JUST FOR YOU","For God's glory. For the provision and protection of those He put around you.","Who has God put in your care?"],
+["ACT","ONE BOLD STEP","Conversation. Decision. Apology. Prayer. Guardrail. Leadership moment.","What are you actually going to do with that?"]]],
+["WHAT IS A MAN?","Biblical identity is defined by God, not circumstances.",[
+["GENESIS 2:15–25","A WORK TO ENJOY. A WILL TO OBEY. A WOMAN TO LOVE.","Purpose. Submission to God. Relational leadership.","Which is weakest in you right now?"],
+["PAGE 24","EVERYBODY WANTS TO BE STRONG","But nobody wants to be sore. Don't cut corners on the foundation.","What foundation are you neglecting?"],
+["PAGES 25–26","FORMED ON PURPOSE","God formed man intentionally. Identity drives behavior.","Where are you finding identity outside God?"],
+["PAGE 37","BELIEVE WHAT GOD HAS SAID","Don't believe your doubts and doubt your beliefs.","What truth do you need to stand on?"],
+["ACT","LEAD SPIRITUALLY AT HOME","Pray out loud with your wife/kids or initiate a spiritual conversation.","What are you actually going to do with that?"]]],
+["BE WATCHFUL","You have an enemy. Start acting like it.",[
+["1 PETER 5:6–11","BE SOBER-MINDED. BE WATCHFUL.","Awareness leads to readiness.","Where are you most vulnerable?"],
+["THE FIVE KILLERS","PRIDE. WORRY. DISTRACTION. ISOLATION. LUST.","Name the attack before it owns the ground.","Which one has the easiest access to you?"],
+["PAGE 57","BE WATCHFUL IS A COMMAND","The Bible is trustworthy and true.","Are you awake to what is happening in your life?"],
+["PAGE 58","THE DEFENDER MATTERS","When a man goes down, the ripple effects are indescribable.","Who is exposed if you go down?"],
+["JOHN 10:10","STEAL. KILL. DESTROY.","The enemy's intent is not ambiguous.","What pattern keeps opening the same door?"],
+["ACT","PUT UP A GUARDRAIL","Mat Carrier. Filter. Remove a temptation source. End the pattern.","What are you actually going to do with that?"]]],
+["STAND FIRM","Put on the whole armor of God.",[
+["EPHESIANS 6:10–18","PUT ON THE WHOLE ARMOR","Men who put on armor are expected to be in a fight.","Are you dressed for the fight you're in?"],
+["ARMOR","BELT. BREASTPLATE. SHOES.","Truth. Righteousness. Gospel of Peace.","Do you bring peace or chaos?"],
+["ARMOR","SHIELD. HELMET. SWORD.","Faith. Salvation. Word of God.","What is your 'It is written' verse?"],
+["ARMOR","PRAYER — AT ALL TIMES","Not occasional check-ins.","Does your prayer life show that this matters?"],
+["PAGES 89–92","KILL THE SIN","Stop treating an apex predator like a pet.","What sin are you still negotiating with?"],
+["PAGE 92","FRUIT COMES FROM ROOTS","Word. Bible study. Fellowship. Worship.","Where are your roots planted?"],
+["ACT","PRAY EPHESIANS 6","Pray it out loud with your Mat Carriers.","What are you actually going to do with that?"]]],
+["BE STRONG","Strength comes from dependence on God, not self.",[
+["2 TIMOTHY 2:1","BE STRONG IN GRACE","Worldly strength is powerless against a spiritual enemy.","Where are you relying on yourself?"],
+["SABBATHED MAN","REST FOR WORK","If the enemy can't make you bad, he'll make you busy.","Are you too busy to be faithful?"],
+["PERSEVERING MAN","ENDURE FOR OTHERS","Will you willingly endure pain on behalf of others?","Who needs your perseverance?"],
+["HUMBLE MAN","SUBMIT TO AUTHORITY","Strength and security show up in humility.","Can you be corrected?"],
+["SERVING MAN","KNEEL AND LIFT OTHERS","Motivation is love, not recognition.","Will you serve when nobody notices?"],
+["PAGES 122–128","STRONG MEN GUARD","Busy is not the same as faithful.","What is God asking you to guard?"],
+["ACT","START THERE","What is the one thing you don't want to do? Start there.","What are you actually going to do with that?"]]],
+["LET ALL THAT YOU DO BE DONE IN LOVE","Love is the measure of real manhood.",[
+["1 CORINTHIANS 16:14","EVERYTHING IN LOVE","Without love, leadership becomes harsh or hollow.","Would your family describe you as patient and kind?"],
+["EPHESIANS 5:25","LOVE LIKE CHRIST","Sacrificial. Consistent. Intentional.","What does sacrifice look like in your home this week?"],
+["PAGES 150–151","I WILL DO, EVEN WHEN YOU DON'T","1 Corinthians 13 is the report card.","Are you passive, controlling, or loving?"],
+["PAGES 153–155","LOVE GOD. LOVE PEOPLE.","Patient AND kind.","Who is requiring your patience right now?"],
+["PAGES 156–158","WHAT IS IT LIKE TO BE ON THE OTHER SIDE OF ME?","Not arrogant. Not rude. Not self-seeking. Not easily angered.","Ask it honestly."],
+["PAGES 159–161","LOVE NEVER QUITS","Bears. Believes. Hopes. Endures.","Where are you tempted to quit?"],
+["ACT","ONE SACRIFICIAL ACT","Serve your wife. Invest in your kids. Encourage someone meaningfully.","What are you actually going to do with that?"]]],
+["FINISH STRONG / MULTIPLY","This isn't the end. It's the beginning.",[
+["2 TIMOTHY 2:2","DISCIPLES MAKE DISCIPLES","Entrust the truth to faithful men who will teach others.","Who is your one man?"],
+["LOOK BACK","PASSIVITY → IDENTITY → WATCHFULNESS","Armor → Strength → Love.","What has God changed in you?"],
+["DAILY","WORD. PRAYER.","Build rhythms that survive the study.","What will you do every day?"],
+["WEEKLY","SABBATH. MAT CARRIERS.","Do not go back to isolation.","Who will know the truth about your life?"],
+["PAGES 176–183","SONSHIP IS BESTOWED","Given. Not earned. The lost are found.","Are you trusting Him?"],
+["MULTIPLY","NAME THE MAN","One man you will disciple — by name.","Who is he?"],
+["ACT","WRITE IT. SHARE IT. JUMP.","Make the commitment plan and share it.","What are you actually going to do with that?"]]]
+];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+document.querySelector('#nav').innerHTML=weeks.map((w,i)=>'<a href="#week'+(i+1)+'">WEEK '+(i+1)+'</a>').join('');
+document.querySelector('#lessons').innerHTML=weeks.map((w,i)=>'<section class="panel week-title" id="week'+(i+1)+'"><div class="kicker">WEEK '+(i+1)+'</div><h1>'+esc(w[0])+'</h1><p>'+esc(w[1])+'</p></section>'+w[2].map(c=>'<section class="panel"><div class="kicker">'+esc(c[0])+'</div><h2>'+esc(c[1])+'</h2><p>'+esc(c[2])+'</p>'+(c[4]?'<a class="watch" target="_blank" rel="noopener" href="'+c[4]+'">PLAY SHORT CLIP</a>':c[3]?'<div class="ask"><small>ASK</small>'+esc(c[3])+'</div>':'')+'</section>').join('')).join('');
+</script></body></html>
